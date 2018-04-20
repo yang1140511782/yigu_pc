@@ -1,0 +1,35 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+/**************cart主体部分***************/
+$width : 1208px;
+.index_con{
+	width: 100%;
+	min-height: 500px;
+	padding-bottom: 50px;
+
+	#cart_con{
+		margin-top: 60px;
+		width: $width;
+		font-size:15px; 
+		
+		h1{
+		margin-top: 100px;
+		text-align: center;
+		display: none;
+		}
+		.tb{
+			margin:0 auto;
+		}
+		.prod_img{
+			height:60px;
+			overflow: hidden;
+			width: 60px;
+			img{
+				width: 100%;
+				height:100%;
+			}
+		}
+	}
+}

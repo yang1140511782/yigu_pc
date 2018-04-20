@@ -1,0 +1,21 @@
+{
+	"res_code" : "0",
+	"res_error" : "",
+	"res_body" : [
+			{"id":1, "img":"img/prod01.jpg", "title":"依谷生态初生蛋（45枚）", "price":99},
+			{"id":2, "img":"img/prod02.jpg", "title":"锡林郭勒有机羔羊棒骨（带肉）545g", "price":68.8},
+			{"id":3, "img":"img/prod03.jpg", "title":"台湾乡田真纯豆奶330ml*3", "price":16.9},
+			{"id":4, "img":"img/prod04.jpg", "title":"牧合家西冷扒片600g", "price":82.8},
+			{"id":5, "img":"img/prod05.jpg", "title":"德国德亚全脂牛奶（200ml*12礼盒）", "price":74.8},
+			{"id":6, "img":"img/prod06.jpg", "title":"原生态青岚黄麻鸡（1050g-1150g）", "price":78},
+			{"id":7, "img":"img/prod07.jpg", "title":"壹点壹客蛋糕卡一磅", "price":168},
+			{"id":8, "img":"img/prod08.jpg", "title":"德芙巧克力", "price":128},
+			{"id":9, "img":"img/prod09.jpg", "title":"黄金谷赤霞珠梅洛红葡萄酒Merlot750ml", "price":238},
+			{"id":10, "img":"img/prod10.jpg", "title":"浪漫味道·粉百合+戴安娜玫瑰+桔硬花", "price":388},
+			{"id":11, "img":"img/prod11.jpg", "title":"野生极品灰干海参10头礼盒装35g", "price":498},
+			{"id":12, "img":"img/prod12.jpg", "title":"自然臻品礼盒B", "price":298},
+			{"id":13, "img":"img/prod13.jpg", "title":"买来西亚薯片160g", "price":16},
+			{"id":14, "img":"img/prod14.jpg", "title":"飞利浦智能吸尘器", "price":1499},
+			{"id":15, "img":"img/prod15.jpg", "title":"KENZO炫彩四件套", "price":4598}
+	]
+}

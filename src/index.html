@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>依谷网</title>
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+<body>
+	<!-- header -->
+	<div id="header">
+		
+	</div>
+	<!-- 侧边栏购物车 -->
+	<div class="right_main">
+		<a href="html/cart.html">
+			<div class="right_cart">
+				<span style="margin-left: 5px;"><img src="img/cart01.jpg" alt=""></span>
+				<div style="width: 15px;margin-left: 10px; margin-top: 10px;"><a href="#" style="color: white;">购物车</a></div>
+			</div>
+		</a>
+		
+	</div>
+	<div class="con"></div>
+	<!-- 轮播图开始 -->
+	<div id="container">
+		<ul id="pic">
+			<li class="lunbo"><a href="#"><img src="img/lunbo1.png"></a></li>
+			<li class="lunbo"><a href="#"><img src="img/lunbo2.png"></a></li>
+			<li class="lunbo"><a href="#"><img src="img/lunbo3.png"></a></li>
+			<li class="lunbo"><a href="#"><img src="img/lunbo4.png"></a></li>
+			<li class="lunbo"><a href="#"><img src="img/lunbo5.png"></a></li>
+		</ul>
+		<!-- 小圆点 -->
+		<div id="pages"></div>
+		<!-- 向前/后 -->
+		<div id="prev">&lt;</div>
+		<div id="next">&gt;</div>
+	</div>
+	</div>
+
+	<!-- 轮播图结束之后 -->
+	<div id="index_container"> 
+		<!-- 轮播结束的silie图 -->
+		<div class="silie">
+			
+		</div>
+		<!-- 模拟商品 -->
+		<div class="flower"><a href="#"><img src="img/flower1.png"></a></div>
+		<div class="products1">
+			<!-- art-template模板 -->
+			<!-- <script type="text/html" id="prod_temp">
+				{{ each produsts prod}}
+					<a href="#">
+						<ul>
+						    <li style="display: none;">{{prod.id}}</li>
+						    <li><img src="{{prod.img}}"></li>
+						    <li>{{prod.title}}</li>
+						    <li>￥{{prod.price}}</li>
+						    <li>加入购物车</li>
+						</ul>
+					</a>
+				{{/each}}
+			</script> -->
+		</div>
+	</div>
+	<!-- footer复用 -->
+	<div id="footer">
+		
+	</div>
+	<!-- art模板 -->
+	<script src="lib/art-template/template-web.js"></script>
+	<!-- 轮播图 -->
+	<script src="js/lunbo.js"></script>
+	<script src="lib/jquery/jquery-1.12.4.js"></script>
+	<!-- 插件 -->
+	<script src="lib/jquery-plugins/jquery.cookie.js"></script>
+	<script src="lib/jquery-plugins/jquery.fly.min.js"></script>
+	<!-- index.js -->
+	<script src="js/index.js"></script>
+</body>
+</html>

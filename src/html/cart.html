@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="../lib/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/yigu/css/cart.css">
+	<link rel="stylesheet" href="/yigu/css/index.css">
+</head>
+<body>
+	<!-- 头部复用 -->
+	<div class="header">
+		
+	</div>
+	<!-- 购物车大盒子 -->
+	<div class="index_con">
+		<!-- 购物车 -->
+		<div id="cart_con">
+			<h1 class="hint">请选购商品</h1>
+			
+		</div>
+		<script type="text/html" id="prod_list">
+			<table class="table table-striped table-hover tb">
+				<!-- 头部 -->
+				<thead>
+					<tr>
+						<th><input type="checkbox" value="">全选</th>
+						<th>商品</th>
+						<th>描述</th>
+						<th>单价</th>
+						<th>数量</th>
+						<th>合计</th>
+						<th>操作</th>
+					</tr>
+				</thead>
+				<!-- 内容 -->
+				<tbody class="cart_tb">
+					{{each products prod}}
+						<tr>
+							<td><input type="checkbox"></td>
+							<td class="prod_img col-md-3"><img src="../{{prod.img}}"></td>
+							<td>{{prod.title}}</td>
+							<td>{{prod.price}}</td>
+							<td><span class="minus">-</span><input type="text" value="{{prod.amount}}" class="input"><span class="add">+</span></td>
+							<td>{{prod.price * prod.amount}}</td>
+							<td><a href="javascript:void(0)">删除</a></td>
+						</tr>
+					{{/each}}
+				</tbody>
+			</table>
+		</script>
+	</div>
+	
+	<!-- 尾部复用 -->
+	<div class="footer">
+		
+	</div>
+
+	<script src="/yigu/lib/jquery/jquery-1.12.4.js"></script>
+	<script src="/yigu/lib/jquery-plugins/jquery.cookie.js"></script>
+	<script src="/yigu/lib/art-template/template-web.js"></script>
+	<script src="/yigu/js/csrt.js"></script>
+</body>
+</html>

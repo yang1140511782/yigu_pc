@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css" media="screen">
+	*{margin: 0; padding: 0;}
+		#container{
+			background:url(../img/zhuce_bg.jpg);
+			width: 100%;
+			position: fixed;
+			height: 100%;
+			opacity: 0.5px;
+		}
+		.register_admin{
+			width: 350px;
+			height: 400px;
+			top: 50%;
+			left: 50%;
+			margin: 100px auto;
+			background: white;
+			list-style: none;
+			padding: 10px;
+		}
+		ul li {
+			list-style: none;
+			margin-top:10px; 
+		}
+		.input{
+			width: 270px;
+			height:40px;
+			padding-left:20px;
+		}
+		.logo_login{
+			width: 140px;
+			height: 45px;
+		}
+		.logo_login img{
+			width: 100%;
+			height: 100%;
+		}
+		.btn{
+			width: 300px;
+			height:50px;
+			background: #fd7400;
+			text-align: center;
+			border-style: none;
+			font-size: 20px; 
+			margin-left:25px;
+		}
+	</style>
+</head>
+<body>
+	<div id="container">
+		<form action="" method="get" class="register">
+			<div class="register_admin">
+				<ul>
+					<li class="logo_login">
+						<img src="../img/logo_login.png">
+					</li>
+					<li><h2 style="font-weight: 100;">注册</h2></li>
+					<!-- 手机号注册 -->
+					<li>
+						<input type="text" name="" placeholder="请输入手机号" class="input">
+					</li>
+					<!-- 没有输入手机号提示 -->
+					<li>
+						<img src="../img/login_error.png">
+						请输入手机号
+					</li>
+					<!-- 密码 -->
+					<li>
+						<input type="password" name="" placeholder="请输入确认密码" class="input">
+					</li>
+					<!-- 密码输入提示 -->
+					<li>
+						<img src="../img/login_error.png">
+						密码长度为4-16位数字,字母、数字组成
+					</li>
+					<!-- 勾选同意 -->
+					<li>
+						<input type="checkbox" name="" value="">
+						同意依谷服务协议
+					</li>
+					<li>
+						<input type="button" name="" value="完成" class="btn">
+					</li>
+				</ul>
+			</div>
+		</form>
+	</div>
+</body>
+</html>
