@@ -7,10 +7,18 @@ require.config({
 		cookie : "lib/jquery-plugins/jquery.cookie",
 		loadHF : "js/loadHeaderFooter",
 		fly : "lib/jquery-plugins/jquery.fly.min",
-		lunbo : "lib/jquery-plugins/slide"
+		lunbo : "lib/jquery-plugins/slide",
+		login-init : "lib/jquery-plugins/supersized-init",
+		login : "lib/jquery-plugins/supersized.3.2.7.min"
 	},
 	shim : {
 		lunbo : {
+			deps : ["jquery"]
+		},
+		fly : {
+			deps : ["jquery"]
+		},
+		zoom : {
 			deps : ["jquery"]
 		}
 	}

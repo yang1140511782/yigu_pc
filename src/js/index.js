@@ -1,5 +1,5 @@
 require(["config"], function(){
-	require(["jquery", "template", "loadHF", "lunbo"], function($, template){
+	require(["jquery", "template", "cookie", "fly", "loadHF", "lunbo"], function($, template, cookie, fly){
 		// 模拟轮播结束的四张图片
 		$(function(){
 			let silie = [
@@ -25,9 +25,9 @@ require(["config"], function(){
 				$(".products1").prepend(html);
 			})
 			// 处理CSS,添加购物车按钮显示
-			$("div.products1").delegate("ul", "mouseenter", function(){
+			$("div.products1").delegate("div", "mouseenter", function(){
 				$(this).find(".add_to_cart").stop().animate({bottom:0},200).show()
-			}).delegate("ul", "mouseleave", function(){
+			}).delegate("div", "mouseleave", function(){
 				$(this).find(".add_to_cart").stop().animate({bottom:-43},200).hide()});
 		})
 		/***************************加入购物车***********************/
@@ -57,20 +57,29 @@ require(["config"], function(){
 				//将数组中的商品保存到cookie中
 				$.cookie("products", products, {expirse : 7, path : "/"});
 				//加在购物车成功之后抛物线
-				let end = $(".right_cart").offset(),
-					flyer = $(`<img src="${prod.img}">`);
+				var offset = $("#end").offset();  //结束的地方的元素
+				$(".add_to_cart").click(function(event){   //是$(".add_to_cart")这个元素点击促发的 开始动画的位置就是这个元素的位置为起点
+					var add_to_cart = $(this);
+					var img = add_to_cart.parent().find('._img').attr('src');
+					var flyer = $('<img class="u-flyer" src="'+img+'">');
 					flyer.fly({
-						start : {
-							left : event.pageX - $(window).scrollLeft(),
-							top : event.pageY - $(window).scrollTop(),
+						start: {
+							left: event.pageX,
+							top: event.pageY
 						},
-						end : {
-							left : end.left - $(window).scrollLeft(),
-							top : end.top - $(window).scrollTop(),
-							width : 0,
-							height : 0
+						end: {
+							left: offset.left+10,
+							top: offset.top+10,
+							width: 0,
+							height: 0
+						},
+						onEnd: function(){
+							$("#msg").show().animate({width: '250px'}, 200).fadeOut(1000);
+							add_to_cart.css("cursor","pointer").removeClass('btn').unbind('click');
+							this.destory();
 						}
-					})
+					});
+				});
 				//判断ID是否在products里边
 				function exist(id, products){
 					let existIndex = -1;
@@ -84,6 +93,5 @@ require(["config"], function(){
 				}
 			})
 		})
-
 	})
 });

@@ -5,6 +5,7 @@
 	<title>依谷网</title>
 	<link rel="stylesheet" type="text/css" href="css/index.css">
 	<link rel="stylesheet" type="text/css" href="css/slide.css">
+	<link rel="stylesheet" type="text/css" href="css/fly.css">
 </head>
 <body>
 	<!-- header -->
@@ -12,15 +13,14 @@
 		
 	</div>
 	<!-- 侧边栏购物车 -->
-	<div class="right_main">
-		<a href="html/cart.html">
-			<div class="right_cart">
-				<span style="margin-left: 5px;"><img src="img/cart01.jpg" alt=""></span>
-				<div style="width: 15px;margin-left: 10px; margin-top: 10px;"><a href="#" style="color: white;">购物车</a></div>
-			</div>
-		</a>
-		
+	<div class="m-sidebar">
+		<div class="cart">
+			<i id="end"></i>
+			<span>购物车</span>
+		</div>
 	</div>
+	<div id="msg">已成功加入购物车！</div>
+	
 	<div class="con"></div>
 	<!-- 轮播图开始 -->
 	<div id="show" rel="autoPlay">
@@ -53,10 +53,10 @@
 						<a href="#">
 							<ul>
 							    <li style="display: none;" class="id">{{prod.id}}</li>
-							    <li class="img"><img src="{{prod.img}}"></li>
+							    <li class="img"><img src="{{prod.img}}" class="_img"></li>
 							    <li class="title">{{prod.title}}</li>
 							    <li class="price">￥{{prod.price}}</li>
-							    <li class="add_to_cart" style="opacity:0.8; color:white;">加入购物车</li>
+							    <li class="add_to_cart btn" style="opacity:0.8; color:white;">加入购物车</li>
 							</ul>
 						</a>
 					</div>
@@ -69,7 +69,6 @@
 		
 	</div>
 	<!-- index.js -->
-	<script src="js/index.js"></script>
 	<script type="text/javascript" src="lib/requirejs/require.js" data-main="js/index"></script>
 </body>
 </html>

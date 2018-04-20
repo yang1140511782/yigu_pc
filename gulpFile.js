@@ -63,9 +63,9 @@ gulp.task("html", function(){
 });
 
 // 复制 images、lib、mock文件夹下所有资源
-gulp.task("copy-images", function(){
-	gulp.src("./src/images/**/*.*")
-		.pipe(gulp.dest("./"+ dest +"/images"))
+gulp.task("copy-img", function(){
+	gulp.src("./src/img/**/*.*")
+		.pipe(gulp.dest("./"+ dest +"/img"))
 		.pipe(connect.reload());
 });
 gulp.task("copy-lib", function(){
@@ -83,7 +83,7 @@ gulp.task("copy-css", function(){
 		.pipe(gulp.dest("./"+ dest +"/css"))
 		.pipe(connect.reload());
 });
-gulp.task("copy", ["copy-images", "copy-lib", "copy-mock", "copy-css"]);
+gulp.task("copy", ["copy-img", "copy-lib", "copy-mock", "copy-css"]);
 
 // 监视任务, 修改之后进行更新
 gulp.task('watch', function () {
