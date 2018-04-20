@@ -1,0 +1,51 @@
+* {margin: 0;padding: 0;}
+.xm-container {
+	position: relative;
+	overflow: hidden;
+}
+.xm-container ul {
+	list-style: none;
+}
+.xm-container ul li {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: none;
+}
+.xm-container .pages {
+	width: 100%;
+	height: 30px;
+	background: rgba(204, 204, 204, 0.5);
+	position: absolute;
+	bottom: 0;
+}
+
+.xm-container .pages i {
+	width: 10px;
+	height: 10px;
+	display: inline-block;
+	border-radius: 5px;
+	background: #fff;
+	margin: 10px;
+}
+
+.xm-container .pages i.current {
+	background: #f00;
+}
+
+.xm-container .prev, .xm-container .next {
+	width: 45px;
+	height: 100px;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	background: #ccc;
+	line-height: 100px;
+	text-align: center;
+	font-size: 40px;
+	color: #fff;
+}
+.xm-container .next {
+	right: 0;
+}

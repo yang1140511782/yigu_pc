@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<title>依谷网</title>
 	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<link rel="stylesheet" type="text/css" href="css/slide.css">
 </head>
 <body>
 	<!-- header -->
@@ -22,22 +23,20 @@
 	</div>
 	<div class="con"></div>
 	<!-- 轮播图开始 -->
-	<div id="container">
-		<ul id="pic">
-			<li class="lunbo"><a href="#"><img src="img/lunbo1.png"></a></li>
-			<li class="lunbo"><a href="#"><img src="img/lunbo2.png"></a></li>
-			<li class="lunbo"><a href="#"><img src="img/lunbo3.png"></a></li>
-			<li class="lunbo"><a href="#"><img src="img/lunbo4.png"></a></li>
-			<li class="lunbo"><a href="#"><img src="img/lunbo5.png"></a></li>
-		</ul>
-		<!-- 小圆点 -->
-		<div id="pages"></div>
-		<!-- 向前/后 -->
-		<div id="prev">&lt;</div>
-		<div id="next">&gt;</div>
-	</div>
-	</div>
+	<div id="show" rel="autoPlay">
+      <div class="img">
+          <span>
+              <a href="#" class="pic-lb"><img src="img/lunbo1.png" /></a>
+              <a href="#" class="pic-lb"><img src="img/lunbo2.png" /></a>
+              <a href="#" class="pic-lb"><img src="img/lunbo3.png" /></a>
+              <a href="#" class="pic-lb"><img src="img/lunbo4.png" /></a>
+              <a href="#" class="pic-lb"><img src="img/lunbo5.png" /></a>
+          </span>
+        <div class="masks mk1"></div>
+        <div class="masks mk2"></div>
+      </div>
 
+    </div>
 	<!-- 轮播图结束之后 -->
 	<div id="index_container"> 
 		<!-- 轮播结束的silie图 -->
@@ -48,34 +47,29 @@
 		<div class="flower"><a href="#"><img src="img/flower1.png"></a></div>
 		<div class="products1">
 			<!-- art-template模板 -->
-			<!-- <script type="text/html" id="prod_temp">
-				{{ each produsts prod}}
-					<a href="#">
-						<ul>
-						    <li style="display: none;">{{prod.id}}</li>
-						    <li><img src="{{prod.img}}"></li>
-						    <li>{{prod.title}}</li>
-						    <li>￥{{prod.price}}</li>
-						    <li>加入购物车</li>
-						</ul>
-					</a>
+			<script type="text/html" id="prod_temp">
+				{{ each products prod}}
+					<div style="overflow:hidden">
+						<a href="#">
+							<ul>
+							    <li style="display: none;" class="id">{{prod.id}}</li>
+							    <li class="img"><img src="{{prod.img}}"></li>
+							    <li class="title">{{prod.title}}</li>
+							    <li class="price">￥{{prod.price}}</li>
+							    <li class="add_to_cart" style="opacity:0.8; color:white;">加入购物车</li>
+							</ul>
+						</a>
+					</div>
 				{{/each}}
-			</script> -->
+			</script>
 		</div>
 	</div>
 	<!-- footer复用 -->
 	<div id="footer">
 		
 	</div>
-	<!-- art模板 -->
-	<script src="lib/art-template/template-web.js"></script>
-	<!-- 轮播图 -->
-	<script src="js/lunbo.js"></script>
-	<script src="lib/jquery/jquery-1.12.4.js"></script>
-	<!-- 插件 -->
-	<script src="lib/jquery-plugins/jquery.cookie.js"></script>
-	<script src="lib/jquery-plugins/jquery.fly.min.js"></script>
 	<!-- index.js -->
 	<script src="js/index.js"></script>
+	<script type="text/javascript" src="lib/requirejs/require.js" data-main="js/index"></script>
 </body>
 </html>

@@ -6,6 +6,27 @@ let gulp = require("gulp"),
 	connect = require("gulp-connect"),
 	dest = "dist"; // 项目部署目标目录
 
+
+// gulp 其他的引用省去
+var cached = require('gulp-cached');
+var print = require('gulp-print');
+
+gulp.task('esx-component', function() {
+	gulp.src(esxSrc)
+	    .pipe(cached('esx-component'))
+	    .pipe(print())
+	    .pipe(babel({
+		    presets: ['react', 'es2015'],
+		    plugins: [
+			    "transform-es2015-block-scoping",
+			    "transform-class-properties",
+			    "transform-es2015-computed-properties",
+			    "transform-es2015-modules-amd"
+		    ]
+	    }))
+	    .pipe(gulp.dest('./public/js/component'));
+});
+
 // 启动服务器
 gulp.task('connect', function() {
 	connect.server({
