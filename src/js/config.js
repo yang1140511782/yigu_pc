@@ -8,7 +8,7 @@ require.config({
 		loadHF : "js/loadHeaderFooter",
 		fly : "lib/jquery-plugins/jquery.fly.min",
 		lunbo : "lib/jquery-plugins/slide",
-		login-init : "lib/jquery-plugins/supersized-init",
+		login_init : "lib/jquery-plugins/supersized-init",
 		login : "lib/jquery-plugins/supersized.3.2.7.min"
 	},
 	shim : {
