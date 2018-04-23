@@ -14,12 +14,34 @@
 	</div>
 	<!-- 侧边栏购物车 -->
 	<div class="m-sidebar">
-		<div class="cart">
+		<div id="cart_right" class="cart">
 			<i id="end"></i>
 			<span>购物车</span>
+			<div class="cart_circle2"></div>
 		</div>
 	</div>
 	<div id="msg">已成功加入购物车！</div>
+	<!-- 隐藏购物车 -->
+	<div class="look_cart">
+		<div class="look_title">
+			<span class="look_close">>></span>
+			<span>购物车</span>
+		</div>
+		<!-- 购物车的商品目录 -->
+		<div class="cart_prod">
+			<script type="text/html" id="cart_temp">
+				{{ each cart_prods cart_prod}}
+					<ul class="cart">
+						<li>{{cart_prod.img}}</li>
+						<li>{{cart_prod.tltle}}</li>
+						<li>{{cart_prod.price}}</li>
+						<li>{{cart_prod.amount}}</li>
+					</ul>
+				{{/each}}
+			</script>
+		</div>
+	</div>
+	
 	
 	<div class="con"></div>
 	<!-- 轮播图开始 -->

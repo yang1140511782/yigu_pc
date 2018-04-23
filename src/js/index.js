@@ -79,6 +79,15 @@ require(["config"], function(){
 							this.destory();
 						}
 					});
+					//查看cookie数量做页面购物车显示
+					$.cookie.json = true;
+					let products = $.cookie("products"),
+						sum = 0;
+					products.forEach(function(prod){
+						sum += Number(prod.amount);
+					})
+					$(".cart_circle").text(sum);
+					$(".cart_circle2").text(sum);
 				});
 				//判断ID是否在products里边
 				function exist(id, products){
@@ -92,6 +101,36 @@ require(["config"], function(){
 					return existIndex;
 				}
 			})
+			$.cookie.json = true;
+					let products = $.cookie("products"),
+						sum = 0;
+					products.forEach(function(prod){
+						sum += Number(prod.amount);
+					})
+					$(".cart_circle").text(sum);
+					$(".cart_circle2").text(sum);
+			// 划过侧边栏购物车改变颜色
+			$("#cart_right").on("mouseenter", function(){
+				$(this).css("background", "#fd7400");
+			}).on("mouseleave", function(){
+				$(this).css("background", "#000");
+			})
+
+		});
+		/*********************侧边栏隐藏购物车*******************/
+		$(function(){
+			//点击侧边栏购物车，显示
+			$(".cart").on("click", function(){
+				$(".look_cart").animate({right:0})
+			});
+			$(".look_close").on("click", function(){
+				$(".look_cart").animate({right:-315})
+			});
+			// 找到cookie里边已加入购物车的商品数据，渲染look_cart(隐藏购物车)页面
+			$.cookie.json = true;
+			let products = $.cookie("products");
+			let html = template("cart_temp", {cart_prods : products});
+			console.log(html); 
 		})
 	})
 });
