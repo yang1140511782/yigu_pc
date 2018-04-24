@@ -8,7 +8,7 @@ require(["config"], function(){
 			// 没有商品则提示
 			if(_products.length === 0){
 				alert("购物车为空，请到主页选购商品");
-				location = "/yigu/index.html";
+				location = "/index.html";
 			}	
 			else{
 				$(".cart_con").hide();

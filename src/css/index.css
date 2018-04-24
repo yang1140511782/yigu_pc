@@ -18,6 +18,8 @@ body{
 .header{
 	width: 100%;
 	height:120px;
+	/*position: fixed;*/
+	z-index: 999;
 }
 .header .top{
 	width: 1208px;
@@ -237,7 +239,7 @@ body{
 	margin-left:5px;
 	margin-top: 5px;
 }
-/*隐藏购物车*/
+/****隐藏购物车****/
 .look_cart{
 	width: 285px;
 	height: 100%;
@@ -272,6 +274,77 @@ body{
     top: -4px;
     left: 2px;
     cursor: pointer;
+}
+/*隐藏购物车的商品样式*/
+.look_cart .cart_prod{
+	min-height: 200px;
+    max-height: 600px;
+    overflow-y: auto;
+    overflow-x: hidden
+}
+.look_cart .cart_prod .cart_pd{
+	float: left;
+    padding: 15px 5px;
+    width: 255px;
+    background: #ccc;
+    margin: 8px 0px;
+}
+.look_cart .cart_prod .cart_pd img{
+	position: relative;
+    float: left;
+    width: 87px;
+    height: 87px;
+    margin-right: 10px;
+}
+.look_cart .cart_prod .cart_pd li:nth-child(3){
+	display: inline-block;
+	margin-top: 15px;
+	margin-right: 10px;
+}
+.look_cart .cart_prod .cart_pd li:nth-child(4){
+	display: inline-block;
+	margin-top: 15px;
+}
+.look_cart .cart_prod .cart_pd li:nth-child(5) a{
+	display: inline-block;
+	margin-top: 5px;
+	margin-left: 100px;
+}
+
+.qingdan{
+	float: left;
+    height: 75px;
+    bottom: 0;
+    width: 100%
+}
+.qingdan .cart_hd{
+	width: 260px;
+    margin: 8px 10px;
+    float: left
+}
+.qingdan span:nth-child(1){
+	float: left;
+	color: white;
+}
+.qingdan span:nth-child(2){
+	float: right;
+    font-weight: 700;
+    font-size: 16px;
+    color: #fd7400;
+    margin-right: 25px;
+}
+.qingdan .cart_btn{
+	display: block;
+    height: 33px;
+    line-height: 33px;
+    font-size: 19px;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    width: 260px;
+    margin: 0 10px;
+    float: left;
+    background: url(../images/cart_go_btn.png) no-repeat 230px center #fd7400;
 }
 /**********************轮播结束后**********************/
 #index_container{

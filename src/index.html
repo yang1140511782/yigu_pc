@@ -31,19 +31,28 @@
 		<div class="cart_prod">
 			<script type="text/html" id="cart_temp">
 				{{ each cart_prods cart_prod}}
-					<ul class="cart">
-						<li>{{cart_prod.img}}</li>
-						<li>{{cart_prod.tltle}}</li>
-						<li>{{cart_prod.price}}</li>
-						<li>{{cart_prod.amount}}</li>
+					<ul class="cart_pd">
+						<li><img src="{{cart_prod.img}}"></li>
+						<li>{{cart_prod.title}}</li>
+						<li>￥{{cart_prod.price}}</li>
+						<li>x{{cart_prod.amount}}</li>
+						<li class="remove_cart" data-id="{{cart_prod.id}}"><a href="#">删除</a></li>
 					</ul>
 				{{/each}}
 			</script>
 		</div>
+		<!-- 结算清单 -->
+		<div class="qingdan">
+			<div class="cart_hd">
+				<span class="cart_hd_num"></span>
+				<span class="cart_hd_sum">合计:￥</span>
+			</div>
+			<a href="html/cart.html" class="cart_btn">结算</a>
+		</div>
 	</div>
 	
-	
 	<div class="con"></div>
+	
 	<!-- 轮播图开始 -->
 	<div id="show" rel="autoPlay">
       <div class="img">
@@ -69,22 +78,21 @@
 		<div class="flower"><a href="#"><img src="img/flower1.png"></a></div>
 		<div class="products1">
 			<!-- art-template模板 -->
-			<script type="text/html" id="prod_temp">
-				{{ each products prod}}
-					<div style="overflow:hidden">
-						<a href="#">
-							<ul>
-							    <li style="display: none;" class="id">{{prod.id}}</li>
-							    <li class="img"><img src="{{prod.img}}" class="_img"></li>
-							    <li class="title">{{prod.title}}</li>
-							    <li class="price">￥{{prod.price}}</li>
-							    <li class="add_to_cart btn" style="opacity:0.8; color:white;">加入购物车</li>
-							</ul>
-						</a>
-					</div>
-				{{/each}}
-			</script>
-		</div>
+			<a class="add-cart">
+				<script type="text/html" id="prod_temp">
+					{{ each products prod}}
+						<div style="overflow:hidden">
+								<ul>
+								    <li style="display: none;" class="id">{{prod.id}}</li>
+								    <li class="img"><a href="/html/prod_data.html"><img src="{{prod.img}}" class="_img"></a></li>
+								    <li class="title">{{prod.title}}</li>
+								    <li class="price">￥{{prod.price}}</li>
+								    <li class="add_to_cart btn" style="opacity:0.8; color:white;cursor: pointer;">加入购物车</li>
+								</ul>
+						</div>
+					{{/each}}
+				</script>
+			</a>
 	</div>
 	<!-- footer复用 -->
 	<div id="footer">

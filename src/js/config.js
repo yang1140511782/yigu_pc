@@ -10,7 +10,8 @@ require.config({
 		lunbo : "lib/jquery-plugins/slide",
 		login_init : "lib/jquery-plugins/supersized-init",
 		login : "lib/jquery-plugins/supersized.3.2.7.min",
-		ui : "lib/jquery-plugins/ui"
+		ui : "lib/jquery-plugins/ui",
+		zoom : "lib/jquery-plugins/magnifier"
 	},
 	shim : {
 		lunbo : {

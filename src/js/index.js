@@ -33,15 +33,13 @@ require(["config"], function(){
 		/***************************加入购物车***********************/
 		$(function(){
 			// 事件委派
-			$("div.products1").delegate("a", "click", function(e){
-				//阻止事件默认行为
-				e.preventDefault();
+			$("div.products1").delegate(".add_to_cart", "click", function(e){
 				//获取当前选购的商品
 				let prod = {
-					id : $(this).find(".id").text(),
-					title : $(this).find(".title").text(),
-					img : $(this).find("img").attr("src"),
-					price : $(this).find(".price").text().slice(1),
+					id : $(this).parent().find(".id").text(),
+					title : $(this).parent().find(".title").text(),
+					img : $(this).parent().find("img").attr("src"),
+					price : $(this).parent().find(".price").text().slice(1),
 					amount : 1
 				};
 				//配置cookie插件,自动在JS值和JSON值转换
@@ -49,7 +47,7 @@ require(["config"], function(){
 				//获取cookie中保存的商品数据
 				let products = $.cookie("products") || [];
 				//判断购物车是否存在已经选购的商品
-				let index = exist(prod.id, products)
+				let index = exist(prod.id, products);
 				if(index == -1) //-1表示不存在
 					products.push(prod);
 				else
@@ -89,17 +87,6 @@ require(["config"], function(){
 					$(".cart_circle").text(sum);
 					$(".cart_circle2").text(sum);
 				});
-				//判断ID是否在products里边
-				function exist(id, products){
-					let existIndex = -1;
-					$.each(products, function(index, prod){
-						if(prod.id == id) {
-							existIndex = index;
-							return false;
-						}
-					})
-					return existIndex;
-				}
 			})
 			$.cookie.json = true;
 					let products = $.cookie("products"),
@@ -121,16 +108,47 @@ require(["config"], function(){
 		$(function(){
 			//点击侧边栏购物车，显示
 			$(".cart").on("click", function(){
-				$(".look_cart").animate({right:0})
+				$(".look_cart").animate({right:10})
 			});
 			$(".look_close").on("click", function(){
 				$(".look_cart").animate({right:-315})
 			});
 			// 找到cookie里边已加入购物车的商品数据，渲染look_cart(隐藏购物车)页面
 			$.cookie.json = true;
-			let products = $.cookie("products");
-			let html = template("cart_temp", {cart_prods : products});
-			console.log(html); 
-		})
+			let products = $.cookie("products") || [];
+			let html = template("cart_temp", {cart_prods : products}); 
+			$(".cart_prod").html(html);
+			// 找到cookie的数量，并做总计
+			let num = 0,
+				sum = 0;
+			products.forEach(function(curr){
+				num += curr.amount;
+				sum += (curr.price * curr.amount);
+			})
+			$(".cart_hd_num").html("共计("+ num + ")件商品");
+			$(".cart_hd_sum").html("合计:￥" + sum.toFixed(2));
+			// 点击删除购物车
+			$(".cart_prod").on("click", ".remove_cart", function(){
+				//找到删除的id
+				let id = $(this).data("id"),
+				//判断数组中有没有这个id
+					index = exist(id, products);
+				products.splice(index, 1);
+				$.cookie("products", products, {path:"/", expirse:30});
+				//删除DOM元素中的当前商品
+				$(this).parents("ul").remove();
+			})
+		});
+		//判断ID是否在products里边
+		function exist(id, products){
+			let existIndex = -1;
+			$.each(products, function(index, prod){
+				if(prod.id == id) {
+					existIndex = index;
+					return false;
+				}
+			})
+			return existIndex;
+		}
 	})
 });

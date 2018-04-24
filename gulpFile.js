@@ -38,7 +38,7 @@ gulp.task('connect', function() {
 // 定制任务：编译sass
 gulp.task("sass", function(){
 	gulp.src("./src/sass/*.scss")
-		.pipe(sass({outputStyle: 'compressed'}))
+		.pipe(sass({outputStyle: 'expanded'}))
 		.pipe(gulp.dest("./"+ dest +"/css"))
 		.pipe(connect.reload());
 });

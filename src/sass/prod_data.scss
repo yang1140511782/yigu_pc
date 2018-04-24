@@ -1,0 +1,188 @@
+/*重置样式*/
+*{margin :0; padding:0;}
+a {text-decoration: none; color:black;}
+li{list-style: none};
+body{
+	box-sizing: border-box;
+}
+/*主体*/
+.main{
+	width: 100%;
+    margin: 20px auto 0px;
+    padding-bottom: 50px;
+    float: left;
+
+    .con{
+    	width: 1208px;
+    	margin: 0 auto;
+
+		.prod_h{
+				float: left;
+			    width: 980px;
+			    margin: 0px 0px 0px 30px;
+			    height: 40px;
+			    line-height: 40px;
+			    font-size: 16px;
+			}
+    }
+	
+}
+/*放大镜*/
+.zoom{
+	width: 1208px;
+	margin: 0 auto;
+	position: relative;
+	.prod{
+		float: right;
+	    width: 500px;
+	    position: absolute;
+	    top:10px;
+	    left: 550px;
+
+	    .prod_title{
+	    	float: left;
+		    width: 500px;
+		    font-size: 18px;
+		    font-weight: bold;
+	    }
+	    p{
+	    	float: left;
+		    text-align: left;
+		    width: 500px;
+		    color: #777;
+		    font-size: 12px;
+		    padding: 5px 0px 0px 0px;
+	    }
+	    .prod_null{
+	    	float: left;
+		    width: 500px;
+		    font-size: 14px;
+		    margin-top: 5px
+	    }
+	    .prod_price{
+	    	float: left;
+		    width: 480px;
+		    height: 90px;
+		    background: #fdf8f4;
+		    padding: 0px 10px 0px 10px;
+		    margin: 10px 0px 0px 0px;
+		    line-height: 50px;
+		    font-size: 18px;
+
+		    b{
+		    	color: #fd7400;
+			    font-size: 24px;
+			    position: relative;
+			    top: 3px;
+		    }
+	    }
+	    .prod_dc{
+	    	float: left;
+		    width: 500px;
+		    margin-top: 10px;
+		    border-bottom: 1px #ccc dashed;
+		    padding-bottom: 5px;
+			border-top: 1px #ccc dashed;
+		    b{
+		    	padding: 2px 5px;
+			    background: #fd7400;
+			    color: #fff;
+			    margin-right: 3px;
+		    }
+		    li{
+		    	float: left;
+			    width: 480px;
+			    padding: 10px 10px 5px 10px;
+		    }
+	    }
+	    .item,.size,.num{
+	    	height: 40px;
+		    padding: 0px 0px 0px 10px;
+		    margin: 10px 0px 5px 0px;
+		    font-size: 14px;
+			
+			.input{
+				display: inline-block;
+				line-height: 28px;
+			    border: 1px solid #E3E3E3;
+			    text-align: left;
+			    text-indent: 10px;
+			    cursor: pointer;
+			    height: 28px;
+			    font-size: 14px;
+			    width: 100px;
+			}
+	    }
+		.size{
+			margin-top: 280px;
+
+			.input{
+				margin-left: 14px;
+			}
+		}
+		.num{
+			margin-top: 23px;
+			
+			.amount{
+				width: 57px;
+				height: 37px;
+				float: left;
+				margin-left: 19px;
+			}
+			.amount_btn{
+				float: left;
+				width: 16px;
+				
+				span{
+					float: left;
+				    width: 16px;
+				    border: 1px solid #a7a6ab;
+				    cursor: pointer;
+				    font-size: 16px;
+				    height: 14px;
+				    line-height: 14px;
+				    text-align: center;
+				    margin-bottom: 5px;
+				    margin-left: 5px;
+				} 
+			}
+		}
+		.buy_btn{
+				float: Left;
+			    width: 445px;
+			    margin: 40px 0;
+
+			    .shopping{
+					float: left;
+				    margin: 0px 0px 0px 10px;
+				    width: 160px;
+				    height: 30px;
+				    line-height: 30px;
+				    font-size: 18px;
+				    color: #fff;
+				    padding: 5px;
+				    -moz-border-radius: 3px;
+				    -webkit-border-radius: 3px;
+				    border-radius: 3px;
+				    background: #fef2e8;
+				    text-align: center;
+				    border: 1px #fd7400 solid
+			    }
+			    .add_cart{
+			    	float: left;
+				    margin: 0px 0px 0px 40px;
+				    width: 120px;
+				    height: 30px;
+				    line-height: 30px;
+				    font-size: 18px;
+				    color: #fff;
+				    padding: 5px 0px 5px 50px;
+				    -moz-border-radius: 3px;
+				    -webkit-border-radius: 3px;
+				    border-radius: 3px;
+				    background: url(../images/buy-add.png) 8px 5px no-repeat #fd7400;
+				    border: 1px #e16700 solid
+			    }
+			}
+	}
+}
