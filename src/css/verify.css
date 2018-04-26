@@ -5,6 +5,9 @@
 	cursor: pointer;
 	margin-bottom: 5px;
 	border: 1px solid #ddd;
+	display: inline-block;
+	float: right;
+	margin-right: 100px;
 }
 
 .cerify-code-panel {
@@ -26,12 +29,17 @@
 .verify-change-area {
 	line-height: 30px;
 	float: left;
+	display: inline-block;
+    float: right;
+    margin-right: -220px;
+    margin-top: 10px
 }
 
 .varify-input-code {
 	display:inline-block; 
-	width: 100%;
-	height: 25px;
+	width: 130px;
+	height: 37px;
+
 }
 
 .verify-change-code {

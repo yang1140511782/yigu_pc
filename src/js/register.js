@@ -4,7 +4,7 @@ require(["config"],function(){
 		$(function(){
 			/******判断输入手机号是否正确******/
 			$(".phone").on("blur", function(){
-				if($(this).val().length == 11 && !/^[1-9]\d*$/.test($(this).val())){
+				if($(this).val().length == 11 && !!/^[1-9]\d*$/.test($(this).val())){
 					$(".phone_hint").css("visibility", "hidden");
 					$(".correct").show();
 					$(".error").hide();
@@ -56,6 +56,23 @@ require(["config"],function(){
 					$(".pass_hint").css("visibility", "visible");
 				}
 			})
+			/**************简单判断是否注册成功****************/
+			$(".btn").on("click", function(){
+				if($(".phone").val().length == 11 && !!/^[1-9]\d*$/.test($(".phone").val()) 
+					&& $(".password").val().length >= 4 && $(".password").val().length <= 16
+					&& $(".ck").is(":checked")){
+					alert("注册成功,三秒钟后返回主页面");
+					setTimeout(function(){
+						location = "../index.html";
+					},3000);
+				} else {
+					$(".err").show();
+					setTimeout(function(){
+						$(".err").hide();
+					},5000)
+				}
+			})
+			
 		});
 	});
 });

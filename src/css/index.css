@@ -191,13 +191,6 @@ body{
 	color: black;
 	font-weight: 100;
 }
-/* .nav .left_menu .sub_nav li span{
-	display: inline-block;
-	width: 40px;
-	height: 40px;
-	overflow: hidden;
-	background: url("/img/menu_bg.png") no-repeat -26px 14px;
-} */
 
 .nav .left_menu .sub_nav li{
 	border:1px solid #fd7400;
@@ -353,7 +346,7 @@ body{
     width: 260px;
     margin: 0 10px;
     float: left;
-    /*background: url(../img/cart_go_btn.png) no-repeat 230px center #fd7400;*/
+    background:#fd7400;
 }
 /**********************轮播结束后**********************/
 #index_container{
@@ -382,6 +375,32 @@ body{
 }
 .silie div:hover{
 	transform: translateX(5px);
+}
+/*新人专享图*/
+.pic{
+	width: 1208px;
+	height: 476px;
+	margin: 0 auto;
+}
+.pic .p1{
+	margin-bottom: 10px;
+}
+.pic .p1:hover{
+	transform: translateX(5px);
+}
+.pic .p2:hover{
+	transform: translateX(5px);
+}
+.p1,.p2{
+	float: left;
+	width: 698px;
+	height: 228px;
+    transition: transform 0.2s linear;
+}
+
+.pic .p3{
+	float: right;
+	margin-top: -235px;
 }
 /*********************模拟商品************************/
 #index_container .flower{

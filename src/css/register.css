@@ -97,3 +97,16 @@ ul li {
 .phone_hint,.code_hint,.pass_hint{
 	visibility: hidden;
 }
+/*登录失败提示的信息*/
+.err{
+	width: 400px;
+	height: 50px;
+	position: absolute;
+	border: 1px solid red;
+	top: 40%;
+	line-height: 50px;
+	text-align: center;
+	background: white;
+	left: 37%;
+	display: none;
+}

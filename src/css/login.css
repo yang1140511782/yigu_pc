@@ -69,6 +69,9 @@ ul li {
     text-align: center;
     border-style: none; 
 }
+#code{
+	margin: 10px 0;
+}
 /*正确，错误背景图*/
 .correct,.error{
 	width: 46px;
@@ -96,4 +99,17 @@ ul li {
 }
 .phone_hint,.code_hint,.pass_hint{
 	visibility: hidden;
+}
+/*登录失败提示的信息*/
+.err{
+	width: 400px;
+	height: 50px;
+	position: absolute;
+	border: 1px solid red;
+	top: 40%;
+	line-height: 50px;
+	text-align: center;
+	background: white;
+	left: -4%;
+	display: none;
 }

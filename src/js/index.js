@@ -55,19 +55,20 @@ require(["config"], function(){
 				//将数组中的商品保存到cookie中
 				$.cookie("products", products, {expirse : 7, path : "/"});
 				//加在购物车成功之后抛物线
-				var offset = $("#end").offset();  //结束的地方的元素
+				var offset = $(".end").offset();  //结束的地方的元素
 				$(".add_to_cart").click(function(event){   //是$(".add_to_cart")这个元素点击促发的 开始动画的位置就是这个元素的位置为起点
 					var add_to_cart = $(this);
 					var img = add_to_cart.parent().find('._img').attr('src');
 					var flyer = $('<img class="u-flyer" src="'+img+'">');
+					console.log(flyer);
 					flyer.fly({
 						start: {
-							left: event.pageX,
-							top: event.pageY
+							left: event.pageX - $(window).scrollTop(),
+							top: event.pageY - $(window).scrollLeft()
 						},
 						end: {
-							left: offset.left+10,
-							top: offset.top+10,
+							left: offset.left+10 - $(window).scrollTop(),
+							top: offset.top+10 - $(window).scrollLeft(),
 							width: 0,
 							height: 0
 						},
@@ -133,7 +134,7 @@ require(["config"], function(){
 					//找到删除的id
 					let id = $(this).data("id"),
 					//判断数组中有没有这个id
-						index = exist(id, products);
+					index = exist(id, products);
 					products.splice(index, 1);
 					$.cookie("products", products, {path:"/", expirse:30});
 					//删除DOM元素中的当前商品

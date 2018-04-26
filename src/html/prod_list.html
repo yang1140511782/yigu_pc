@@ -7,6 +7,8 @@
 	<link rel="stylesheet" type="text/css" href="/css/prod_list.css">
 	<link rel="stylesheet" href="/css/index.css">
 	<link rel="stylesheet" type="text/css" href="/css/slide.css">
+	<link rel="stylesheet" type="text/css" href="../css/hd.css">
+	<link rel="stylesheet" type="text/css" href="/css/fly.css">
 
 </head>
 <body>
@@ -29,6 +31,45 @@
       </div>
 
     </div>
+    <!-- 侧边栏购物车 -->
+	<div class="m-sidebar">
+		<div id="cart_right" class="cart">
+			<i class="end"></i>
+			<span>购物车</span>
+			<div class="cart_circle2"></div>
+		</div>
+	</div>
+	<div id="msg">已成功加入购物车！</div>
+	<!-- 隐藏购物车 -->
+	<div class="look_cart">
+		<div class="look_title">
+			<span class="look_close">>></span>
+			<span>购物车</span>
+		</div>
+		<!-- 购物车的商品目录 -->
+		<div class="cart_prod">
+			<script type="text/html" id="cart_temp">
+				{{ each cart_prods cart_prod}}
+					<ul class="cart_pd">
+						<li><img src="../{{cart_prod.img}}"></li>
+						<li>{{cart_prod.title}}</li>
+						<li>￥{{cart_prod.price}}</li>
+						<li>x{{cart_prod.amount}}</li>
+						<li class="remove_cart" data-id="{{cart_prod.id}}"><a href="#">删除</a></li>
+					</ul>
+				{{/each}}
+			</script>
+		</div>
+		<!-- 结算清单 -->
+		<div class="qingdan">
+			<div class="cart_hd">
+				<span class="cart_hd_num"></span>
+				<span class="cart_hd_sum">合计:￥</span>
+			</div>
+			<a href="html/cart.html" class="cart_btn">结算</a>
+		</div>
+	</div>
+	
 	<!-- 商品列表 -->
 	<div class="main_list">
 		<div class="list_filter">

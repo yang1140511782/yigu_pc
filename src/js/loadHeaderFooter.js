@@ -35,24 +35,28 @@ define(["jquery"], function($){
 					})
 				}
 			$(".cart_circle").text(sum);
+		/**********二级菜单*********/
+		$(function(){
 
-		/********************吸顶效果************************/
-			/*$(function(){  
-		    var a = $('.con_header'),  
-		      b =a.offset();//返回或设置导航栏相对于文档的偏移(位置)  
-		 	 //加个屏幕滚动事件，c是滚动条相当于文档最顶端的距离  
-		    $(document).on('scroll',function(){  
-		      // var c = $(document).scrollTop();  
-		  // 当滚动的屏幕距离大于等于导航栏本身离最顶端的距离时（判断条件）给它加样式（根据自己业务的条件加样式，一般如下）*／  
-		      if(b.top<=500){  
-		        a.css({'position':'fixed','top':'0px'})  
-		        } else if(b.top === 0){  
-		          a.css({'position': 'absolute', 'top':'0px'})  
-		          }  
-		     	})  
- 			 }); */
+			//商品分类
+
+			$('.all-goods .item').hover(function(){
+
+				$(this).addClass('active').find('s').hide();
+
+				$(this).find('.product-wrap').show();
+
+			},function(){
+
+				$(this).removeClass('active').find('s').show();
+
+				$(this).find('.product-wrap').hide();
+
+			});
+
 		});
+	})
+	});
 		//加载尾部资源
 		$("#footer").load("/html/reuse/footer.html");
-	})
-})
+});
