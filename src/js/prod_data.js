@@ -45,7 +45,16 @@ require(["config"], function(){
 				$.cookie("products", products, {path:"/", expirse:30});
 				//删除DOM元素中的当前商品
 				$(this).parents("ul").remove();
-			})
+			});
+/*			console.log(products);
+			//查看cookie数量做页面购物车显示
+			let	sum = 0;
+				if(products){
+					products.forEach(function(prod){
+						sum += Number(prod.amount);
+					})
+				}
+			$(".cart_circle2").text(sum);*/
 		});
 		/************************点击修改数量********************/
 		/***调用cookie插件***/
@@ -63,7 +72,6 @@ require(["config"], function(){
 			} else {
 				$(".amount").val(num--)
 			}
-
 		})
 		//判断ID是否在products里边
 		function exist(id, products){

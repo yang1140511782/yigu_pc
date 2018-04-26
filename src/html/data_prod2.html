@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="/css/index.css">
+	<link rel="stylesheet" type="text/css" href="/css/magnifier.css">
+	<link rel="stylesheet" type="text/css" href="/css/prod_data.css">
+	<link rel="stylesheet" type="text/css" href="/css/fly.css">	
+</head>
+<body>
+	<!-- 头部复用 -->
+	<div id="header">
+		
+	</div>
+	<!-- 主体部分 -->
+	<div class="main">
+		<!-- 放置主题部分的盒子 -->
+		<div class="con">
+			<!-- 头部小导航 -->
+			<div class="prod_h">
+				<a href="#">新鲜水果></a>
+				<a href="#">水果></a>
+				<a href="#">国产水果></a>
+				<a href="#">苹果></a>
+				<a href="#" style="color: #fd7400;"> 山东红富士苹果80#15kg></a>
+			</div>
+			
+		</div>
+	</div>	
+	<!-- zoom放大镜及详情部分 -->
+	<div class="zoom">
+		<!-- 放大镜 -->
+		<div class="magnifier" id="magnifier1">
+			<div class="magnifier-container">
+				<div class="images-cover"></div>
+				<!--当前图片显示容器-->
+				<div class="move-view"></div>
+				<!--跟随鼠标移动的盒子-->
+			</div>
+			<div class="magnifier-assembly">
+				<div class="magnifier-btn">
+					<span class="magnifier-btn-left">&lt;</span>
+					<span class="magnifier-btn-right">&gt;</span>
+				</div>
+				<!--按钮组-->
+				<div class="magnifier-line">
+					<ul class="clearfix animation03">
+						<li>
+							<div class="small-img">
+								<img src="../img/list1.jpg" />
+							</div>
+						</li>
+						<li>
+							<div class="small-img">
+								<img src="../img/prod1-2.jpg" />
+							</div>
+						</li>
+						<li>
+							<div class="small-img">
+								<img src="../img/prod1-3.jpg" />
+							</div>
+						</li>
+						<li>
+							<div class="small-img">
+								<img src="../img/prod1-4.jpg" />
+							</div>
+						</li>
+						<li>
+							<div class="small-img">
+								<img src="../img/prod1-5.jpg" />
+							</div>
+						</li>
+					</ul>
+				</div>
+				<!--缩略图-->
+			</div>
+			<div class="magnifier-view"></div>
+		<!--经过放大的图片显示容器-->
+		</div>
+		<!-- 商品详情部分 -->
+		<div class="prod">
+			<div class="prod_title">山东红富士苹果80#15kg</div>
+			<p>高端大果 单果约重200-250g 口感香脆爽 核小肉多</p>
+			<div class="prod_null">
+							&nbsp;&nbsp;
+						</div>
+			<div class="prod_price">
+				<span>市场价：</span>
+				<span style="text-decoration: line-through;color: #ccc;">￥268</span><br>
+				<span>商城价：</span>
+				<b style="color: #fd7400">￥256.00</b>
+			</div>
+			<div class="prod_dc">
+				<ul>
+					<li>
+						<b>配送</b>16:00 前完成订单,预计明日(04-25)送达,生鲜商品仅限深圳!
+					</li>
+					<li>
+						<b>运费</b>深圳市内每单物流费8元起，满199元免物流!
+					</li>
+					<li>
+						<b>提示</b>产品图片及描述内容仅做参考,请您以收到的商品实物为准！谢谢
+					</li>
+				</ul>
+			</div>
+			<div class="item">
+				<span>配送至：&nbsp;</span>
+				<span class="input">成都市内</span>
+			</div>
+			<div class="size">
+				<span>规格：&nbsp;</span>
+				<span class="input">约56个</span>
+			</div>
+			<div class="num">
+				<span style="float: left;margin-top: 5px;">数量：&nbsp;</span>
+				<input type="text" value="1" class="amount">
+				<span class="amount_btn">
+					<span class="p_add">+</span><span class="p_minus">-</span>
+				</span>
+			</div>
+			<!-- 立即购买，加入购物车 -->
+			<div class="buy_btn">
+				<div class="shopping"><a href="/html/cart.html">立即购买</a></div>
+				<div class="add_cart"><a href="#">加入购物车</a></div>
+			</div>
+		</div>
+	</div>
+	</div>
+
+	<!-- 侧边栏购物车 -->
+	<div class="m-sidebar">
+		<div id="cart_right" class="cart">
+			<i id="end"></i>
+			<span>购物车</span>
+			<div class="cart_circle2"></div>
+		</div>
+	</div>
+	<div id="msg">已成功加入购物车！</div>
+	<!-- 隐藏购物车 -->
+	<div class="look_cart">
+		<div class="look_title">
+			<span class="look_close">>></span>
+			<span>购物车</span>
+		</div>
+		<!-- 购物车的商品目录 -->
+		<div class="cart_prod">
+			<script type="text/html" id="cart_temp">
+				{{ each cart_prods cart_prod}}
+					<ul class="cart_pd">
+						<li><img src="../{{cart_prod.img}}"></li>
+						<li>{{cart_prod.title}}</li>
+						<li>￥{{cart_prod.price}}</li>
+						<li>x{{cart_prod.amount}}</li>
+						<li class="remove_cart" data-id="{{cart_prod.id}}"><a href="#">删除</a></li>
+					</ul>
+				{{/each}}
+			</script>
+		</div>
+		<!-- 结算清单 -->
+		<div class="qingdan">
+			<div class="cart_hd">
+				<span class="cart_hd_num"></span>
+				<span class="cart_hd_sum">合计:￥</span>
+			</div>
+			<a href="html/cart.html" class="cart_btn">结算</a>
+		</div>
+	</div>	
+	<!-- 尾部复用 -->
+	<div id="footer">
+		
+	</div>
+
+	<script src="../lib/requirejs/require.js" data-main="../js/prod_data"></script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+{
+	"res_code" : "0",
+	"res_error" : "",
+	"res_body" : [
+			{"id":1, "img":"img/list1.jpg", "title":"山东红富士苹果80#15kg高端大果 单果约重200-250g 口感香脆爽 核", "price":256},
+			{"id":2, "img":"img/list2.jpg", "title":"河北蜜梨12kg白皮鸭梨 新鲜 肉厚 汁水多 甜如蜜 产地直采", "price":68.8},
+			{"id":3, "img":"img/list3.jpg", "title":"海南椰子(单个)约900g 送吸管 新鲜去皮 汁水清甜 果肉芳香 畅享热带", "price":16.9},
+			{"id":4, "img":"img/list4.jpg", "title":"山东A级水晶富士1.5kg高端大果 单果约重200-250g 口感香脆爽 核小", "price":82.8},
+			{"id":5, "img":"img/list5.jpg", "title":"山东A级水晶富士7.5kg高端大果 单果约重200-250g 口感香脆爽 核小", "price":74.8},
+			{"id":6, "img":"img/list6.jpg", "title":"新疆库尔勒香梨6.5kg梨中贵族 甘甜滋润 沙漠中的一股清泉 正宗新疆", "price":78},
+			{"id":7, "img":"img/list7.jpg", "title":"越南火龙果礼箱3.3kg大果 红皮白肉 果肉多多 纯白清新 湄公河肥沃", "price":168},
+			{"id":8, "img":"img/list8.jpg", "title":"越南火龙果礼箱5kg大果 红皮白肉 果肉多多 纯白清新 湄公河肥沃土", "price":128},
+			{"id":9, "img":"img/list9.jpg", "title":"美国无籽红提4.5kg个头饱满 果肉又嫩又脆 齿间暴", "price":238},
+			{"id":10, "img":"img/list10.jpg", "title":"美国无籽红提4.5kg个头饱满 无籽多汁 可带皮吃 果肉又嫩又脆 齿间暴", "price":388},
+			{"id":11, "img":"img/list11.jpg", "title":"美国无籽红提2.25kg个头饱满 无籽多汁 可带皮吃 果肉又嫩又脆 齿间", "price":498},
+			{"id":12, "img":"img/list12.jpg", "title":"新西兰加力果4.5kg新西兰名果 皮薄肉脆 又甜又多汁 天然果香 感受自", "price":94.6},
+			{"id":13, "img":"img/list13.jpg", "title":"新西兰加力果2.5kg新西兰名果 皮薄肉脆 又甜又多汁 天然果香 感受自", "price":16},
+			{"id":14, "img":"img/list14.jpg", "title":"美国无籽黑提4.5kg紫黑亮泽 玲珑黑美人 果皮不涩口 轻松皮肉同食 老", "price":83.9},
+			{"id":15, "img":"img/list15.jpg", "title":"海南树上熟木瓜5.5kg新鲜时令水果 树上熟 经典品质 饱含热带阳光的", "price":72.8}
+	]
+}

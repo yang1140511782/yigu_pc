@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="/css/index.css">
+	<link rel="stylesheet" type="text/css" href="/css/indent.css">
+	<link rel="stylesheet" type="text/css" href="../lib/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/css/login_ck.css">
+</head>
+<body>
+	<!-- 头部复用 -->
+	<div id="header">
+		
+	</div>
+	<!-- 订单主体部分 -->
+	<div class="indent_main">
+		<div class="con">
+			<!-- 清单提交信息 -->
+			<p class="title">填写并核对订单信息</p>
+			<div class="message">
+				<!-- 收货人信息 -->
+				<div class="person_msg">
+					<input type="radio" name="" style="width: 12.5px;height:12.5px;"><span>收货人信息</span><br>
+					*收货人Q ：<input type="text" value="QQ666666"><br>
+					*所在地区 ：<input type="text" value="成都"><br>
+					*详情地址 ：<input type="text" value="" class="address"><br>
+					*手机号码 ：<input type="text" value=""><br>
+					*邮政编码 ：<input type="text" value=""><br>
+					*订单备注 ：<input type="text" name=""><br>
+					<input type="button" name="" value="确认地址" class="btn">
+				</div>
+				<!-- 支付方式 -->
+				<div class="mode">
+					<h2>支付方式</h2>
+					<input type="radio"><span>在线支付  支持多家银行借记卡、信用卡支付、支持支付宝等多种支付平台。</span><br>
+					<input type="radio"><span>货到付款  送货上门后再付款，使用现金或刷银行卡。</span>
+				</div>
+			</div>
+			<!-- 商品清单 -->
+			<div class="prod_indent">
+				<div class="top">
+					<span>商品清单</span>
+					<a href="cart.html" style="color: red">返回修改购物车</a>	
+				</div>
+				<!-- 商品 -->
+				<div class="order_box">
+					
+					<table class="table table-bordered table-hover" style="margin-bottom: 0px;">
+						<!-- 头部标题 -->
+						<thead>
+							<tr>
+								<td>商品</td>
+								<td>商品描述</td>
+								<td>单价</td>
+								<td>数量</td>
+								<td>小计</td>
+							</tr>
+						</thead>
+						<!-- 中间商品 -->
+						<tbody class="order_prod">
+							<script type="text/html" id="order_list">
+								{{ each orders prod}}
+									<tr>
+										<td class="img" style="text-align: center; width: 50px;"><img src="../{{prod.img}}"></td>
+										<td>{{prod.title}}</td>
+										<td>{{prod.price}}</td>
+										<td>{{prod.amount}}</td>
+										<td data-id="id">{{(prod.price * prod.amount).toFixed(2)}}</td>
+									</tr>
+								{{/each}}
+							</script>
+						</tbody>
+						<!-- 尾部结算 -->
+						<tfoot>
+							<tr>
+								<td colspan="4" style="text-align: right;">订单需支付总金额：<span class="order_sum" style="color: red;">￥0.00	</span></td>
+								<td class="to_login" style="text-align: center;background: red;color: white;font-weight: 600; cursor: pointer;">提交订单</td>
+							</tr>
+						</tfoot>
+					</table>
+				</div>
+
+			</div>
+		<!-- 会员登录  -->
+		<div id='_start'>
+			<div id='_close' style="display: none;">
+				<span class="glyphicon glyphicon-remove"
+				.></span>
+			</div>
+			<br /> 
+			<!--登录框-->
+			<div id="login_container">
+				<div id="lab1">
+					<span id="lab_login">会员登录</span>
+					<span id="lab_toRegist">
+						&emsp;还没有账号&nbsp;
+						<span id='toRegist' style="color: #EB9316;cursor: pointer;"><a href="./register.html">立即注册</a></span>
+					</span>
+				</div>
+				<div style="width:330px;">
+					<span id="lab_type1">手机号/账号登陆</span>
+				</div>
+				<div id="form_container1">
+					<br />
+					<input type="text" class="form-control" placeholder="手机号/用户名" id="login_number" value="admin" />
+					<input type="password" class="form-control" placeholder="密码" id="login_password" />
+					<input type="button" value="登录" class="btn btn-success" id="login_btn" />
+					<span id="rememberOrfindPwd">
+						<span>
+							<input id="remember" type="checkbox" style="margin-bottom: -1.5px;"/>
+						</span>
+					<span style="color:#000000">
+							记住密码&emsp;&emsp;&emsp;&emsp;
+						</span>
+					<span style="color:#000000">
+							忘记密码
+						</span>
+					</span>
+				</div>
+
+				<div style="display:block;width:330px;height：40px;">
+					<span id="lab_type2">使用第三方直接登陆</span>
+				</div>
+				<div style="width:330px;height:100px;border-bottom: 1px solid #FFFFFF;">
+					<br />
+					<button id="login_QQ" type="button" class="btn btn-info">
+						<img src="/img/qq32.png" style="width:20px;margin-top:-4px;" />&emsp;QQ登录
+					</button>
+					<button id="login_WB" type="button" class="btn btn-danger">
+						<img src="/img/sina32.png" style="width:20px;margin-top:-4px;" />&emsp;微博登录
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- 尾部复用 -->
+	<div id="footer">
+		
+	</div>
+	<script text="text/javascript" src="../lib/requirejs/require.js" data-main="../js/indent.js"></script>
+</body>
+</html>

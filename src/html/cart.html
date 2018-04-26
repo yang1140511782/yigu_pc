@@ -6,7 +6,6 @@
 	<link rel="stylesheet" type="text/css" href="../lib/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="../lib/bootstrap/js/bootstrap.min.js">
 	<link rel="stylesheet" type="text/css" href="/css/cart.css">
-	<link rel="stylesheet" type="text/css" href="/css/login_ck.css">
 	<link rel="stylesheet" href="/css/index.css">
 </head>
 <body>
@@ -58,7 +57,7 @@
 						<td><input type="checkbox" name="" class="ck_all">全选</td>
 						<td colspan="4"><a href="../index.html">继续购物</a></td>
 						<td style="width: 200px;">商品总价：<span class="total" style="font-size: 20px;">￥0.00</span></td>
-						<td id="Login_start_" style="font-size: 20px;background: #fd7400;text-align: center;color:white;line-height: 35px; cursor: pointer;">结算</td>
+						<td style="font-size: 20px;background: #fd7400;text-align: center;line-height: 35px;"><a href="indent.html" style="color: white">结算</a></td>
 					</tr>
 				</tfoot>
 			</table>
@@ -69,57 +68,6 @@
 					<button class="qx">取消</button>
 			</div>
 		<!-- 点击结算，弹出登录框提示登录 -->
-		<!-- 会员登录  -->
-		<!--<div id='Login_start' style="position: absolute;" >-->
-		<div id='_start'>
-			<div id='_close' style="display: none;">
-				<span class="glyphicon glyphicon-remove"
-				.></span>
-			</div>
-			<br /> 
-			<!--登录框-->
-			<div id="login_container">
-				<div id="lab1">
-					<span id="lab_login">会员登录</span>
-					<span id="lab_toRegist">
-						&emsp;还没有账号&nbsp;
-						<span id='toRegist' style="color: #EB9316;cursor: pointer;"><a href="./register.html">立即注册</a></span>
-					</span>
-				</div>
-				<div style="width:330px;">
-					<span id="lab_type1">手机号/账号登陆</span>
-				</div>
-				<div id="form_container1">
-					<br />
-					<input type="text" class="form-control" placeholder="手机号/用户名" id="login_number" value="admin" />
-					<input type="password" class="form-control" placeholder="密码" id="login_password" />
-					<input type="button" value="登录" class="btn btn-success" id="login_btn" />
-					<span id="rememberOrfindPwd">
-						<span>
-							<input id="remember" type="checkbox" style="margin-bottom: -1.5px;"/>
-						</span>
-					<span style="color:#000000">
-							记住密码&emsp;&emsp;&emsp;&emsp;
-						</span>
-					<span style="color:#000000">
-							忘记密码
-						</span>
-					</span>
-				</div>
-
-				<div style="display:block;width:330px;height：40px;">
-					<span id="lab_type2">使用第三方直接登陆</span>
-				</div>
-				<div style="width:330px;height:100px;border-bottom: 1px solid #FFFFFF;">
-					<br />
-					<button id="login_QQ" type="button" class="btn btn-info">
-						<img src="/img/qq32.png" style="width:20px;margin-top:-4px;" />&emsp;QQ登录
-					</button>
-					<button id="login_WB" type="button" class="btn btn-danger">
-						<img src="/img/sina32.png" style="width:20px;margin-top:-4px;" />&emsp;微博登录
-					</button>
-				</div>
-			</div>
 		</script>
 	</div>
 	

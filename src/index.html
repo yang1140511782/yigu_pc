@@ -52,48 +52,50 @@
 	</div>
 	
 	<div class="con"></div>
-	
-	<!-- 轮播图开始 -->
-	<div id="show" rel="autoPlay">
-      <div class="img">
-          <span>
-              <a href="#" class="pic-lb"><img src="img/lunbo1.png" /></a>
-              <a href="#" class="pic-lb"><img src="img/lunbo2.png" /></a>
-              <a href="#" class="pic-lb"><img src="img/lunbo3.png" /></a>
-              <a href="#" class="pic-lb"><img src="img/lunbo4.png" /></a>
-              <a href="#" class="pic-lb"><img src="img/lunbo5.png" /></a>
-          </span>
-        <div class="masks mk1"></div>
-        <div class="masks mk2"></div>
-      </div>
+	<div class="box">
+		<!-- 轮播图开始 -->
+		<div id="show" rel="autoPlay">
+	      <div class="img">
+	          <span>
+	              <a href="#" class="pic-lb"><img src="img/lunbo1.png" /></a>
+	              <a href="#" class="pic-lb"><img src="img/lunbo2.png" /></a>
+	              <a href="#" class="pic-lb"><img src="img/lunbo3.png" /></a>
+	              <a href="#" class="pic-lb"><img src="img/lunbo4.png" /></a>
+	              <a href="#" class="pic-lb"><img src="img/lunbo5.png" /></a>
+	          </span>
+	        <div class="masks mk1"></div>
+	        <div class="masks mk2"></div>
+	      </div>
 
-    </div>
-	<!-- 轮播图结束之后 -->
-	<div id="index_container"> 
-		<!-- 轮播结束的silie图 -->
-		<div class="silie">
-			
+	    </div>
+		<!-- 轮播图结束之后 -->
+		<div id="index_container"> 
+			<!-- 轮播结束的silie图 -->
+			<div class="silie">
+				
+			</div>
+			<!-- 模拟商品 -->
+			<div class="flower"><a href="#"><img src="img/flower1.png"></a></div>
+			<div class="products1">
+				<!-- art-template模板 -->
+				<a class="add-cart">
+					<script type="text/html" id="prod_temp">
+						{{ each products prod}}
+							<div style="overflow:hidden">
+									<ul>
+									    <li style="display: none;" class="id">{{prod.id}}</li>
+									    <li class="img"><a href="/html/prod_data.html"><img src="{{prod.img}}" class="_img"></a></li>
+									    <li class="title">{{prod.title}}</li>
+									    <li class="price">￥{{prod.price}}</li>
+									    <li class="add_to_cart btn" style="opacity:0.8; color:white;cursor: pointer;">加入购物车</li>
+									</ul>
+							</div>
+						{{/each}}
+					</script>
+				</a>
 		</div>
-		<!-- 模拟商品 -->
-		<div class="flower"><a href="#"><img src="img/flower1.png"></a></div>
-		<div class="products1">
-			<!-- art-template模板 -->
-			<a class="add-cart">
-				<script type="text/html" id="prod_temp">
-					{{ each products prod}}
-						<div style="overflow:hidden">
-								<ul>
-								    <li style="display: none;" class="id">{{prod.id}}</li>
-								    <li class="img"><a href="/html/prod_data.html"><img src="{{prod.img}}" class="_img"></a></li>
-								    <li class="title">{{prod.title}}</li>
-								    <li class="price">￥{{prod.price}}</li>
-								    <li class="add_to_cart btn" style="opacity:0.8; color:white;cursor: pointer;">加入购物车</li>
-								</ul>
-						</div>
-					{{/each}}
-				</script>
-			</a>
 	</div>
+	
 	<!-- footer复用 -->
 	<div id="footer">
 		

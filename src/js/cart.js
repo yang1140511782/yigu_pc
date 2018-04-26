@@ -93,51 +93,6 @@ require(["config"], function(){
 				$(".ck_all").prop("checked", _status);
 				sum();
 			});
-			/**************************插件点击结算，弹出登录框提示*****************************/
-			//打开会员登录 
-			$("#Login_start_").click(function() {
-				$("#regist_container").hide();
-				$("#_close").show();
-				$("#_start").animate({
-					left: '38%',
-					height: '520px',
-					width: '400px'
-				}, 500, function() {
-					$("#login_container").show(500);
-					$("#_close").animate({
-						height: '40px',
-						width: '40px'
-					}, 500);
-				});
-			});
-			//关闭
-			$("#_close").click(function() {
-				
-				$("#_close").animate({
-					height: '0px',
-					width: '0px'
-				}, 500, function() {
-					$("#_close").hide(500);
-					$("#login_container").hide(500);
-					$("#regist_container").hide(500);
-					$("#_start").animate({
-						left: '0px',
-						height: '0px',
-						width: '0px'
-					}, 500);
-				});
-			});
-			//去 登录
-			$("#toLogin").click(function(){
-				$("#regist_container").hide(500);
-				$("#login_container").show(500);
-			});
-			$("#login_QQ").click(function(){
-				alert("暂停使用！");
-			});
-			$("#login_WB").click(function(){
-				alert("暂停使用！");
-			});
 			/***********************需要用到的封装函数****************************/
 			// 找出 id 对应商品在 products 中下标
 			function exist(id, products) {

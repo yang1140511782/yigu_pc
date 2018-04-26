@@ -1,0 +1,123 @@
+*{margin:0 auto; padding:0; }
+body,div,input{
+	box-sizing: border-box;
+}
+/*模拟渲染页面的商品*/
+.main_list{
+	width: 100%;
+	min-height: 200px;
+	margin-top: 40px;
+}
+.main_list .list{
+	width: 1208px;
+	height: 830px;
+	margin: 0 auto;
+}
+.main_list .list div{
+	width: 230px;
+	height: 266px;
+	float: left;
+	margin-left: 10px;
+	background: white;
+	text-align: center;
+	margin-top: 10px;
+	position: relative;
+	box-shadow: 1px 1px 5px #ccc;
+}
+.main_list .list div img{
+	width: 188px;
+	height: 188px;
+	text-align: center;
+}
+.main_list .list div .price{
+	color: red;
+}
+.main_list .list div .add_to_cart{
+	background: #fd7400;
+	width: 230px;
+	height:43px;
+	margin:0 auto;
+	line-height: 35px;
+	position: absolute;
+	left: 0;
+	bottom: -43px;
+}
+.main_list .list div i{
+	float: left;
+    width: 53px;
+    height: 20px;
+    margin-right: 5px;
+    background: url(../img/yg.png) no-repeat 0px 4px;
+}
+/*筛选*/
+.list_filter{
+	width: 1190px;
+	height: 42px;
+	margin :0 auto;
+	border: 1px solid #ccc;
+}
+.list_filter .l_sort{
+	width: 146px;
+	height: 40px;
+	float: left;
+	font-size: 14px;
+	text-align: center;
+	line-height: 40px;
+}
+.list_filter .l_sort span{
+	display: inline-block;
+	width: 85px;
+	height: 40px;
+	background: #fd7400;
+	cursor: pointer;
+	color: white;
+}
+
+.list_filter .l_xuan{
+	float: left;
+	width: 295px;
+	height: 30px;
+	text-align: center;
+	margin: 6px 100px 0 270px;
+	position: relative;
+}
+.list_filter .l_xuan .l_search{
+	width: 246px;
+	height: 30px;
+	padding-left: 10px;
+	float: left;
+	border: 1px solid #ccc;
+}
+.list_filter .l_xuan .l_btn{
+	width: 45px;
+	height: 30px;
+	background: #fd7400;
+	border: none;
+	float: left;
+}
+
+.list_filter .pages{
+	float: left;
+	margin-top: 14px;
+	margin-left: 265px;
+}
+.list_filter .pages a{
+	margin-right: 10px; 
+}
+
+.l_info{
+	position: absolute;
+    max-height: 300px;
+    z-index: 9999;
+    width: 247px;
+    box-sizing: border-box;
+    background: #FFF;
+    cursor: default;
+    overflow: auto;
+    padding-left: 10px;
+    font-size: 13px;
+    left: 0;
+    top: 30px;
+	border: 1px solid #ccc;
+}
+

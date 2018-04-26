@@ -1,39 +1,47 @@
 require(["config"], function(){
-	require(["jquery", "template", "cookie", "fly", "loadHF", "lunbo"], function($, template, cookie, fly){
-		// 模拟轮播结束的四张图片
-		$(function(){
-			let silie = [
-					{img : "./img/pro_hd_01.jpg"},
-					{img : "./img/pro_hd_02.jpg"},
-					{img : "./img/pro_hd_03.jpg"},
-					{img : "./img/pro_hd_04.jpg"},
-			];
-			var html = "";
-			// 遍历添加
-			silie.forEach(function(curr){
-				html += `<div><a herf="#"><img src="${curr.img}"></a></div>`;
-			});	
-			//向生态系统里边做HTML添加
-			$(".silie").html(html);
-		});
+	require(["jquery", "template", "cookie", "fly", "loadHF", "lunbo"], function($, template, cookie){
+		
+		//搜索框
+			$(".l_search").on("keyup", function(){
+				let val = $(this).val(),//当前文本框的值
+					url = `https://suggest.taobao.com/sug?code=utf-8&q=${val}&callback=?`;
+				//使用jsonp实现跨域请求
+				$.getJSON(url, function(data){
+					let html = "";
+					data.result.forEach(function(curr){
+						html += `<div>${curr[0]}</div>`; 
+					})
 
+					$(".l_info").html(html);
+					//点击内容到搜索框中
+					$(".l_info").on("click", function(e){
+						let src = e.target;
+						$(".l_search").val(src.innerText);
+					})
+					//离开隐藏搜索的内容
+					$(".l_info").on("mouseleave", function(){
+						$(".l_info").hide();
+					})
+				})
+			});
 		/***************************异步加载商品***********************/
 		$(function(){
 			//使用模板引擎异步加载商品
-			$.getJSON("/mock/prod.json", function(data){
-				let html = template("prod_temp", {products : data.res_body});
-				$(".products1").prepend(html);
+			$.getJSON("../mock/list.json", function(data){
+				let html = template("prod_list", {products : data.res_body});
+				$(".list").prepend(html);
 			})
 			// 处理CSS,添加购物车按钮显示
-			$("div.products1").delegate("div", "mouseenter", function(){
-				$(this).find(".add_to_cart").stop().animate({bottom:0},200).show()
+			$("div.list").delegate("div", "mouseenter", function(){
+				$(this).find(".add_to_cart").stop().animate({bottom:0},200).show();
+				$(this).css("box-shadow", "1px 1px 5px #ccc");
 			}).delegate("div", "mouseleave", function(){
 				$(this).find(".add_to_cart").stop().animate({bottom:-43},200).hide()});
-		})
+		});
 		/***************************加入购物车***********************/
 		$(function(){
 			// 事件委派
-			$("div.products1").delegate(".add_to_cart", "click", function(e){
+			$("div.list").delegate(".add_to_cart", "click", function(e){
 				//获取当前选购的商品
 				let prod = {
 					id : $(this).parent().find(".id").text(),
@@ -159,4 +167,4 @@ require(["config"], function(){
 			return existIndex;
 		}
 	})
-});
+})
